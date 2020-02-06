@@ -22,13 +22,9 @@
     <modules>
       <module>spring-boot-init-01</module>
         <module>spring-boot-10-bill</module>
-        <module>spring-boot-bill</module>
         <module>spring-boot-jdbc</module>
         <module>spring-boot-mybaits</module>
         <module>spring-boot-servlet</module>
-        <module>spring-boot_jpa</module>
-        <module>spring-boot_shiro</module>
-        <module>spring-boot_tomcat</module>
         <module>springboot-web</module>
         <module>springboot_config_01</module>
         <module>springboot_demo01</module>
