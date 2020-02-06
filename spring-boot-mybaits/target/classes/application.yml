@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    username: root
+    password: 123
+#    mysql 8.0以上版本需要调整时区和系统一致
+    url: jdbc:mysql://127.0.0.1:3306/jdbc?serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+#   数据源的其他配置，dataSourceProperties中没有的相关属性，默认无法绑定
+    initial-size: 8
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,logback
+    maxPoolPreparedStatementPerConnectionSize: 25
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#    指定数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+#mybatis相关的配置
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  # 映射文件配置路径
+  mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  level:
+    com.mengxuegu.springbootmybaits.mapper: debug

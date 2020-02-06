@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <title>梦学谷账单管理系统</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+</head>
+<body>
+<!--头部-->
+    <header th:replace="index :: publicHeader">
+
+    </header>
+<!--时间-->
+    <section th:replace="index::publicTime">
+
+    </section>
+<!--主体内容-->
+    <section th:replace="index::publicMian ">
+
+    </section>
+    <footer class="footer"><div style="text-align:center;">	<p><a href="http://www.mengxuegu.com/" target="_blank">梦学谷 www.mengxuegu.com</a> 版权所有</p></div></footer>
+	<!--
+	<script src="js/time.js"></script>
+	-->
+<h1>此处展示的是switch...case</h1>
+<div th:switch="${man}">
+    <p th:case="2">nan</p>
+
+    <p th:case="${sex}">男</p>
+    <p th:case="*">未知</p>
+
+
+</div>
+<hr>
+<div th:utext="${desc}"></div>
+
+<hr>
+<div th:object="${session.user}">
+
+    <p th:text="*{name}"></p>
+    <p th:text="*{id==1001 ? '种子选手':'非种子选手'}"></p>
+</div>
+<div>我学会了热部署。。。。</div>
+</body>
+</html>

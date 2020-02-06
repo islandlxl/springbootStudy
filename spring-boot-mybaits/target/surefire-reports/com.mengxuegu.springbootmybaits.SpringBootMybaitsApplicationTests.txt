@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mengxuegu.springbootmybaits.SpringBootMybaitsApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.66 s - in com.mengxuegu.springbootmybaits.SpringBootMybaitsApplicationTests

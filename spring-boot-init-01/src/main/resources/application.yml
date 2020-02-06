@@ -1,0 +1,50 @@
+
+#  yml语法
+student:
+  id: 1001
+  name: lxl
+  sex: man
+  age: 20
+
+
+  list: 12 23 46
+
+  money: 12000
+array:
+- java
+- python
+- hadoop
+
+
+#student:
+#  id: 1001
+#  name: lxl
+#  money: 1001
+#  birthday: 1994/01/30
+#  girlfriends:
+#    day: lxl
+#    day02: zxl
+#  list:
+#  - one
+#  - two
+#  - three
+#  forte:
+#    name: java
+#    time: 8
+##student:
+#  id: 1001
+#  name: lxl
+#  money: 1001
+#  birthday: 1993/12/19
+#  girlfriends:
+#    day01: lls
+#    day02: ssd
+#  list:
+#  - sds
+#  - dsd
+#  forte:
+#    name: java
+#    time: 8
+
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>头部</title>
+</head>
+<body>
+<h1>头部引入</h1>
+
+<!--引入是用th:fragment-->
+
+<div th:fragment="header_common">
+    此处是公共引用的区域th:fragment
+</div>
+<div id="header_common_id">
+    通过id去取值
+</div>
+
+
+</body>
+</html>

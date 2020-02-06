@@ -1,0 +1,91 @@
+﻿<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="/main/public ::#public_head">
+</head>
+<body>
+<!--头部-->
+<header class="publicHeader" th:replace="/main/public ::#public_header">
+
+</header>
+<!--时间-->
+<section class="publicTime" th:replace="/main/public ::#public_time">
+</section>
+
+<!--主体内容-->
+<section class="publicMian">
+    <div class="left" th:replace="/main/public ::#public_left">
+
+    </div>
+
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>账单管理页面 >> 帐单修改页面</span>
+        </div>
+        <div class="providerAdd">
+            <form id="updateFrom"  th:action="@{/bill}" method="post" action="#">
+                <!--div的class 为error是验证错误，ok是验证成功-->
+                <!--springboot对put请求的处理方式
+                1.创建一个input标签 name=_method value=put
+                2.表单必须是post请求
+                -->
+             <input type="hidden" name="_method" value="put"/>
+             <input type="hidden" name="bid" th:value="${billProvider.bid}">
+                <div class="">
+                    <label for="billCode">帐单编码：</label>
+                    <input type="text" th:value="${billProvider.billCode}" name="billCode" id="billCode" placeholder=""/>
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="billName">商品名称：</label>
+                    <input type="text" th:value="${billProvider.billName}" name="billName" id="billName" placeholder=""/>
+                    <span >*</span>
+                </div>
+                <div>
+                    <label for="billCom">商品单位：</label>
+                    <input type="text" th:value="${billProvider.billCom}" name="billCom" id="billCom" placeholder=""/>
+                    <span>*</span>
+
+                </div>
+                <div>
+                    <label for="billNum">商品数量：</label>
+                    <input type="text" th:value="${billProvider.billNum}" name="billNum" id="billNum" placeholder=""/>
+                    <span>*</span>
+                </div>
+                <div>
+                    <label for="money">总金额：</label>
+                    <input type="text" th:value="${billProvider.money}"  name="money" id="money" placeholder=""/>
+                    <span>*</span>
+                </div>
+                <div>
+                    <label >供应商：</label>
+                    <select name="pid" >
+                        <option value="">--请选择相应的提供商--</option>
+                        <option value=""  th:each="p:${providers}" th:text="${p.providerName}"
+                                th:value="${p.pid}" th:checked="${pid == p.pid}">北京市粮油总公司</option>
+
+                    </select>
+                    <span>*</span>
+                </div>
+                <div>
+                    <label >是否付款：</label>
+                    <input type="radio" value="1" name="pay" th:checked="${billProvider.pay==1}"/>已付款
+                    <input type="radio" value="0" name="pay" th:checked="${billProvider.pay==0}"/>未付款
+                </div>
+                <div class="providerAddBtn">
+                    <!--<a href="#">保存</a>-->
+                    <!--<a href="billList.html">返回</a>-->
+                    <input type="button" value="保存" onclick="$('#updateFrom').submit()"/>
+                    <input type="button" value="返回" onclick="history.back(-1)"/>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+<footer class="footer"><div style="text-align:center;">	<p><a href="http://www.mengxuegu.com/" target="_blank">梦学谷 www.mengxuegu.com</a> 版权所有</p></div></footer>
+<script src="../js/jquery.js"></script>
+<!--
+	<script src="js/time.js"></script>
+	-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>模板</title>
+</head>
+<body>
+<h1>这是模板</h1>
+
+<p th:text="${name}">
+    请在此处输入类容
+</p>
+
+<div th:replace="header :: header_common"></div>
+     <!--header是文件名
+        header_common是文件的th:fragment名
+     -->
+<div th:insert="header :: #header_common_id">
+</div>
+<!--replace已经把标签换了，换成了div-->
+<h1 th:replace="header::#header_common_id" class="text">
+
+</h1>
+
+
+</body>
+</html>

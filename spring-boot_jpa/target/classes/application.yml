@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    data-username: root
+    data-password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jpa?serverTimezone=GMT%2B8
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect

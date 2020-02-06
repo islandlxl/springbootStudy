@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mengxuegu.springbootmybaits.mapper.BillMapper">
+
+    <select id="getBillById" resultType="com.mengxuegu.springbootmybaits.entities.Bill">
+        select * from bill where bid=#{bid}
+    </select>
+
+    <insert id="insertBill">
+        insert into  bill(bill_code,bill_name,bill_come,bill_num)
+        values (#{billCode},#{billName},#{billCome},#{billNum})
+
+    </insert>
+
+</mapper>

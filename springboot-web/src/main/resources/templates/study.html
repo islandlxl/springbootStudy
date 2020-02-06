@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>这是返回的页面</title>
+</head>
+<body>
+
+<h1>返回值</h1>
+<table border="1px">
+    <tr><th>姓名</th></tr>
+
+    <tr th:each="list:${list}">
+
+        <td th:text="${list.getName()}"></td>
+
+    </tr>
+
+</table>
+<!--获取迭代状态-->
+
+<table >
+
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>总数</th>
+        <th>奇数或者偶数</th>
+        <th>第一个元素</th>
+        <th>最后一个元素</th>
+    </tr>
+
+    <tr th:each="user,itercast:${list}">
+
+        <td th:text="${itercast.count}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${itercast.size}"></td>
+        <td th:text="${itercast.odd}"></td>
+        <td th:text="${itercast.first}"></td>
+        <td th:text="${itercast.last}"></td>
+
+
+    </tr>
+
+</table>
+
+</body>
+</html>
