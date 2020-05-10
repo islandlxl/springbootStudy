@@ -31,6 +31,7 @@ public class SpringMVCconfigurer  {
                 registry.addViewController("/index.html").setViewName("main/login");
 
                 registry.addViewController("/main.html").setViewName("main/index");
+                registry.addViewController("/map.html").setViewName("map/testMap");
             }
 
             @Override
