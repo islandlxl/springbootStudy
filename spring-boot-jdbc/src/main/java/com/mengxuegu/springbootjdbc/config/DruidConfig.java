@@ -47,8 +47,7 @@ public class DruidConfig {
         druidDataSource.setMaxWait(druidDataSourceProperties.getMaxWait());
         druidDataSource.setFilters(druidDataSourceProperties.getFilters());
         druidDataSource.setPoolPreparedStatements(druidDataSourceProperties.isPoolPreparedStatements());
-
-        return new DruidDataSource();
+        return druidDataSource;
     }
 
     /**
