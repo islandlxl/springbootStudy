@@ -11,10 +11,10 @@ import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.servlet.Servlet;
 import java.util.Arrays;
-import java.util.EventListener;
 
 /*
 @project:com.mengxuegu.springbootservlet.config
@@ -23,7 +23,8 @@ import java.util.EventListener;
 @create:2018/12/24,12:35
 */
 @Configuration
-public class MyServletConfig  {
+public class MyServletConfig implements WebMvcConfigurer {
+
 
 
     @Bean
@@ -67,5 +68,16 @@ public class MyServletConfig  {
         return bean;
 
     }
+//
+//    public  void myInterceptor(InterceptorRegistry register){
+//        register.addInterceptor(new MyInterceptor()).addPathPatterns("*/**").excludePathPatterns("/index.html","/");
+//
+//    }
 
+
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new com.mengxuegu.springbootservlet.config.LoginInterceptor()).addPathPatterns("/**");
+     //   registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/loginjudge","/","/retolo","/static/**");
+
+    }
 }

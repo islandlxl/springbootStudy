@@ -25,7 +25,7 @@ public class ProviderController {
     @GetMapping("/provider")
     public Map<String,Object> list(){
 
-       List <Map<String,Object>> map=jdbcTemplate.queryForList("select * from provider");
+       List <Map<String,Object>> map=jdbcTemplate.queryForList("select * from supplier");
 
        System.out.println(map);
        return map.get(0);
