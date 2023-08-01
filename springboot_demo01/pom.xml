@@ -19,6 +19,12 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>com.islandlxl</groupId>
+            <artifactId>springboot-jdbc-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 

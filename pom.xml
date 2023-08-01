@@ -29,7 +29,8 @@
         <module>springboot_config_01</module>
         <module>springboot_demo01</module>
         <module>springboot_loging_03</module>
-
+        <module>springboot-jdbc-starter</module>
+        <module>springboot-jdbc-autoconfigure</module>
     </modules>
 
 
