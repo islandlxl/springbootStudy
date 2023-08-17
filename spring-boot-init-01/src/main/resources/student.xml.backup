@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="studentService" class="com.mengxuegu.springbootinit01.Service.StudentService"/>
+<bean id="studentService" class="com.mengxuegu.springbootinit01.test.TestFunService"/>
 
 
 </beans>

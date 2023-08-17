@@ -1,8 +1,10 @@
 package com.mengxuegu.springbootinit01;
 
+import com.mengxuegu.springbootinit01.bean.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.stream.Location;
 

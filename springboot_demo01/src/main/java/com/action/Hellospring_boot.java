@@ -21,4 +21,28 @@ public class Hellospring_boot {
 
     }
 
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 5; i++) {
+           new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println(Thread.currentThread().getName()+"--------");
+                    Hellospring_boot instance = getInstance();
+                    System.out.println(instance);
+                }
+            },"t"+i).start();
+        }
+
+
+    }
+
+    private static Hellospring_boot hellospring_boot;
+
+    public  static  Hellospring_boot getInstance(){
+        if (hellospring_boot==null){
+            hellospring_boot=new Hellospring_boot();
+        }
+        return hellospring_boot;
+    }
 }

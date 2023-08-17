@@ -1,9 +1,7 @@
 package com.mengxuegu.springbootinit01.controller;
 
-import com.mengxuegu.springbootinit01.Service.StudentService;
-import com.mengxuegu.springbootinit01.bean.Student;
+import com.mengxuegu.springbootinit01.dao.IslandDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /*
@@ -16,11 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Hello {
 
     @Autowired
-    Student student;
+    private IslandDao islandDao2;
 
-    @RequestMapping(value = "/hello")
-    public Student hello(){
-
-        return student;
+    @Override
+    public String toString() {
+        return "IslandService{" +
+                "islandDao=" + islandDao2 +
+                '}';
     }
 }

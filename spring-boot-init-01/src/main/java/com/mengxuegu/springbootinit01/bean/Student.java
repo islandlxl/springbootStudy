@@ -1,6 +1,8 @@
 package com.mengxuegu.springbootinit01.bean;
 
 import com.sun.org.apache.bcel.internal.util.ClassPath;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
@@ -19,11 +21,19 @@ import java.util.Map;
 @create:2018/12/11,10:17
 */
 //@PropertySource(value = {"classpath:student.properties"})
-@Component
-@ConfigurationProperties(prefix = "student")
+//@Component
+//@ConfigurationProperties(prefix = "student")
 //@Validated
-public class Student {
+public class Student implements InitializingBean, DisposableBean {
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("实现了DisposableBean接口的方法的实现destroy。。。");
+    }
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("实现了InitializingBean方法的实现afterPropertiesSet。。。");
+    }
 
     private int id;
 
@@ -107,6 +117,15 @@ public class Student {
     public void setForte(Forte forte) {
         this.forte = forte;
     }
+
+//
+//    private void init() {
+//        System.out.println("student这个bean对象的一个init初始化创建方法");
+//    }
+//
+//    private void destroy() {
+//        System.out.println("student这个bean对象的一个destroy销毁方法");
+//    }
 
 
 }
